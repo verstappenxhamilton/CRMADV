@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Inventário sem valores secretos. Informações fornecidas não são confirmação de quatro projetos independentes.",
+  "reviewedAt": "2026-09-13",
+  "credentials": [
+    {
+      "credentialId": "google-key-1",
+      "secretRef": "env:GEMINI_KEY_1",
+      "projectId": null,
+      "environment": null,
+      "billingMode": "unknown",
+      "dataPolicyVerified": false,
+      "allowedDataClasses": [
+        "synthetic"
+      ],
+      "enabled": false
+    },
+    {
+      "credentialId": "google-key-2",
+      "secretRef": "env:GEMINI_KEY_2",
+      "projectId": null,
+      "environment": null,
+      "billingMode": "unknown",
+      "dataPolicyVerified": false,
+      "allowedDataClasses": [
+        "synthetic"
+      ],
+      "enabled": false
+    },
+    {
+      "credentialId": "google-key-3",
+      "secretRef": "env:GEMINI_KEY_3",
+      "projectId": null,
+      "environment": null,
+      "billingMode": "unknown",
+      "dataPolicyVerified": false,
+      "allowedDataClasses": [
+        "synthetic"
+      ],
+      "enabled": false
+    },
+    {
+      "credentialId": "google-key-4",
+      "secretRef": "env:GEMINI_KEY_4",
+      "projectId": null,
+      "environment": null,
+      "billingMode": "unknown",
+      "dataPolicyVerified": false,
+      "allowedDataClasses": [
+        "synthetic"
+      ],
+      "enabled": false
+    }
+  ],
+  "verifiedQuotaGroups": [],
+  "reportedTextQuotas": {
+    "source": "Informação textual do usuário",
+    "projectId": null,
+    "scopeVerified": false,
+    "models": [
+      {
+        "model": "gemini-3.8-flash",
+        "rpm": {
+          "kind": "unknown"
+        },
+        "tpm": {
+          "kind": "unknown"
+        },
+        "rpd": {
+          "kind": "reported_finite",
+          "value": 20
+        }
+      },
+      {
+        "model": "gemini-3.7-flash",
+        "rpm": {
+          "kind": "unknown"
+        },
+        "tpm": {
+          "kind": "unknown"
+        },
+        "rpd": {
+          "kind": "reported_finite",
+          "value": 20
+        }
+      },
+      {
+        "model": "gemini-3.6-flash",
+        "rpm": {
+          "kind": "unknown"
+        },
+        "tpm": {
+          "kind": "unknown"
+        },
+        "rpd": {
+          "kind": "reported_finite",
+          "value": 20
+        }
+      },
+      {
+        "model": "gemini-3.5-flash",
+        "rpm": {
+          "kind": "unknown"
+        },
+        "tpm": {
+          "kind": "unknown"
+        },
+        "rpd": {
+          "kind": "reported_finite",
+          "value": 20
+        }
+      },
+      {
+        "model": "Gemini 3.0 (ID pendente)",
+        "rpm": {
+          "kind": "unknown"
+        },
+        "tpm": {
+          "kind": "unknown"
+        },
+        "rpd": {
+          "kind": "reported_finite",
+          "value": 20
+        }
+      },
+      {
+        "model": "gemini-3.5-flash-lite",
+        "rpm": {
+          "kind": "unknown"
+        },
+        "tpm": {
+          "kind": "unknown"
+        },
+        "rpd": {
+          "kind": "reported_finite",
+          "value": 500
+        }
+      },
+      {
+        "model": "gemini-3.1-flash-lite",
+        "rpm": {
+          "kind": "unknown"
+        },
+        "tpm": {
+          "kind": "unknown"
+        },
+        "rpd": {
+          "kind": "reported_finite",
+          "value": 500
+        }
+      },
+      {
+        "model": "antigravity-preview-05-2026",
+        "rpm": {
+          "kind": "unknown"
+        },
+        "tpm": {
+          "kind": "unknown"
+        },
+        "rpd": {
+          "kind": "reported_finite",
+          "value": 100
+        }
+      },
+      {
+        "model": "gemini-embedding-2",
+        "rpm": {
+          "kind": "unknown"
+        },
+        "tpm": {
+          "kind": "unknown"
+        },
+        "rpd": {
+          "kind": "reported_finite",
+          "value": 1000
+        }
+      }
+    ]
+  },
+  "reportedLiveQuotas": {
+    "sourceImage": "../docs/references/quota-voz-ai-studio.png",
+    "columnHeadersSource": "Cabeçalhos confirmados pelo usuário na conversa: Modelo, Categoria, RPM, TPM, RPD.",
+    "projectId": null,
+    "scopeVerified": false,
+    "billingMode": "unknown",
+    "concurrentSessions": {
+      "kind": "unknown"
+    },
+    "rows": [
+      {
+        "accountLabel": "Gemini 2.5 Flash Native Audio Dialog",
+        "category": "API Live",
+        "apiModelId": null,
+        "rpm": {
+          "kind": "reported_unlimited"
+        },
+        "tpm": {
+          "kind": "reported_finite",
+          "value": 1000000
+        },
+        "rpd": {
+          "kind": "reported_unlimited"
+        }
+      },
+      {
+        "accountLabel": "Gemini 3 Flash Live",
+        "category": "API Live",
+        "apiModelId": null,
+        "rpm": {
+          "kind": "reported_unlimited"
+        },
+        "tpm": {
+          "kind": "reported_finite",
+          "value": 65000
+        },
+        "rpd": {
+          "kind": "reported_unlimited"
+        }
+      },
+      {
+        "accountLabel": "Gemini 3.5 Live Translate",
+        "category": "API Live",
+        "apiModelId": null,
+        "rpm": {
+          "kind": "reported_unlimited"
+        },
+        "tpm": {
+          "kind": "reported_finite",
+          "value": 20000
+        },
+        "rpd": {
+          "kind": "reported_unlimited"
+        }
+      },
+      {
+        "accountLabel": "Gemini 3.5 Transcribe Live",
+        "category": "API Live",
+        "apiModelId": null,
+        "rpm": {
+          "kind": "reported_unlimited"
+        },
+        "tpm": {
+          "kind": "reported_finite",
+          "value": 20000
+        },
+        "rpd": {
+          "kind": "reported_unlimited"
+        }
+      }
+    ]
+  },
+  "requiredBeforeActivation": [
+    "Mapear chave para projeto sem copiar o segredo para documentos.",
+    "Confirmar escopo, modelos habilitados e eventuais grupos de cota compartilhados.",
+    "Separar credenciais de teste e produção por tratamento permitido de dados.",
+    "Confirmar preços e restrições de sessão; ilimitado em RPM/RPD não significa custo zero.",
+    "Definir orçamento por escritório e teto total da plataforma."
+  ],
+  "dailyResetTimeZone": "America/Los_Angeles",
+  "unknownLimitPolicy": "disabled_until_verified",
+  "source": "https://ai.google.dev/gemini-api/docs/rate-limits"
+}

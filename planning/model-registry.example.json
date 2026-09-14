@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Especificação ilustrativa; não carregar diretamente em produção.",
+  "reviewedAt": "2026-09-13",
+  "activationPolicy": "Todos os modelos exigem disponibilidade no projeto, termos adequados aos dados e avaliação por tarefa antes de enabled=true.",
+  "generationPolicy": {
+    "maxProviderAttemptsPerJob": 3,
+    "maxQualityEscalationsPerJob": 1,
+    "quotaSafetyReserveFraction": 0.2,
+    "oneActiveTurnPerConversation": true
+  },
+  "models": [
+    {
+      "id": "gemini-3.1-flash-lite",
+      "api": "generateContent",
+      "tier": "lite",
+      "tasks": [
+        "intake_turn",
+        "extract_simple_fields"
+      ],
+      "enabled": false
+    },
+    {
+      "id": "gemini-3.5-flash-lite",
+      "api": "generateContent",
+      "tier": "lite",
+      "tasks": [
+        "intake_turn",
+        "extract_simple_document"
+      ],
+      "enabled": false
+    },
+    {
+      "id": "gemini-3.5-flash",
+      "api": "generateContent",
+      "tier": "intermediate",
+      "tasks": [
+        "intermediate_fallback"
+      ],
+      "enabled": false
+    },
+    {
+      "id": "gemini-3.6-flash",
+      "api": "generateContent",
+      "tier": "strong",
+      "tasks": [
+        "extract_complex_document"
+      ],
+      "enabled": false
+    },
+    {
+      "id": "gemini-3.7-flash",
+      "api": "generateContent",
+      "tier": "strong",
+      "tasks": [
+        "reconcile_facts",
+        "build_dossier"
+      ],
+      "enabled": false
+    },
+    {
+      "id": "gemini-3.8-flash",
+      "api": "generateContent",
+      "tier": "strong",
+      "tasks": [
+        "difficult_exception",
+        "review_factual_evidence"
+      ],
+      "enabled": false
+    },
+    {
+      "id": "gemini-3-flash-preview",
+      "api": "generateContent",
+      "tier": "unverified_legacy",
+      "tasks": [],
+      "enabled": false,
+      "requiresAliasConfirmation": "Confirmar se corresponde ao rótulo Gemini 3.0 informado."
+    },
+    {
+      "id": "antigravity-preview-05-2026",
+      "api": "interactions",
+      "tier": "managed_agent",
+      "tasks": [
+        "public_research",
+        "synthetic_evaluation"
+      ],
+      "enabled": false,
+      "allowedDataClasses": [
+        "public",
+        "synthetic"
+      ],
+      "productionCRMToolsAllowed": false
+    },
+    {
+      "id": "gemini-embedding-2",
+      "api": "embedContent",
+      "tier": "embedding",
+      "tasks": [
+        "embed_document",
+        "embed_query"
+      ],
+      "outputDimensionality": 768,
+      "embeddingSpaceVersion": "gemini-embedding-2-768-v1",
+      "enabled": false
+    },
+    {
+      "id": "gemini-2.5-flash-native-audio-preview-12-2025",
+      "api": "live",
+      "tier": "live_primary_candidate",
+      "tasks": [
+        "administrative_voice"
+      ],
+      "accountLabel": "Gemini 2.5 Flash Native Audio Dialog",
+      "requiresAccountMapping": true,
+      "enabled": false
+    },
+    {
+      "id": "gemini-3.1-flash-live-preview",
+      "api": "live",
+      "tier": "live_comparison_candidate",
+      "tasks": [
+        "administrative_voice"
+      ],
+      "accountLabel": "Gemini 3 Flash Live",
+      "requiresAccountMapping": true,
+      "enabled": false
+    },
+    {
+      "id": "gemini-3.5-live-translate-preview",
+      "api": "live",
+      "tier": "live_translation",
+      "tasks": [
+        "voice_translation"
+      ],
+      "requiresBusinessNeed": true,
+      "enabled": false
+    },
+    {
+      "id": "gemini-3.5-transcribe-live",
+      "api": "transcribe_live",
+      "tier": "live_transcription",
+      "tasks": [
+        "live_transcription"
+      ],
+      "enabled": false
+    }
+  ],
+  "taskDefaults": {
+    "deterministic": [
+      "availability",
+      "booking_validation",
+      "money_arithmetic",
+      "checklist_lookup",
+      "permissions",
+      "subscription_entitlements"
+    ],
+    "intake_turn": {
+      "initialCandidate": "gemini-3.1-flash-lite",
+      "maxRecentMessages": 6,
+      "maxRetrievedChunks": 4
+    },
+    "extract_simple_document": {
+      "initialCandidate": "gemini-3.5-flash-lite",
+      "requireEvidence": true
+    },
+    "review_factual_evidence": {
+      "initialCandidate": "gemini-3.8-flash",
+      "requireEvidence": true,
+      "legalApprovalAllowed": false
+    },
+    "voice_session": {
+      "initialCandidate": "gemini-2.5-flash-native-audio-preview-12-2025",
+      "initialMaxSeconds": 180,
+      "warningBeforeEndSeconds": 20,
+      "serverEnforced": true,
+      "configuredConcurrentSessionLimit": null
+    }
+  },
+  "prices": {
+    "status": "Importar e verificar preços por modalidade no cartão E08; não usar zero para preço desconhecido."
+  },
+  "sources": [
+    "https://ai.google.dev/gemini-api/docs/models",
+    "https://ai.google.dev/gemini-api/docs/antigravity-agent",
+    "https://ai.google.dev/gemini-api/docs/models/gemini-embedding-2",
+    "https://ai.google.dev/gemini-api/docs/pricing"
+  ]
+}
