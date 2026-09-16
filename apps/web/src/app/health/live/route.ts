@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { APP_VERSION, HealthCheckResponse } from "@crmadv/contracts";
+import { APP_VERSION, type HealthCheckResponse } from "@crmadv/contracts";
 
 export async function GET() {
   const payload: HealthCheckResponse = {
