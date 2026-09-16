@@ -2,7 +2,7 @@
 
 O produto recomendado é uma **sala de atendimento que transforma conversas e documentos em trabalho organizado para o advogado**. O escritório recebe um endereço próprio, publica no Instagram ou instala um botão no site, acompanha os atendimentos e revisa um dossiê com as fontes de cada informação.
 
-Este repositório contém a pesquisa e o plano de implementação. **O sistema ainda não foi codificado.** O plano considera a descrição e as duas respostas da outra IA fornecidas na conversa. As fontes foram consultadas em 13/09/2026; preços, modelos e permissões precisam ser reconferidos quando a implementação começar.
+Este repositório contém a pesquisa, o plano de implementação e a fundação técnica inicial do sistema. A subetapa **E00.1 já foi codificada e validada**; as próximas entregas seguem o plano incremental descrito abaixo. As fontes foram consultadas em 13/09/2026; preços, modelos e permissões precisam ser reconferidos conforme a implementação avançar.
 
 ## Decisões principais
 
@@ -59,4 +59,4 @@ O objetivo da supervisão é aprovar mudanças pequenas com evidência de funcio
 
 ## Primeiro passo de execução
 
-Entregar à IA executora o cartão **E00**, usando o prompt do documento 06. Ela deve preparar o projeto local e os testes com dados fictícios. A configuração de contas e a publicação real acontecem nos cartões próprios, depois de existir uma entrega verificável.
+A fundação E00.1 está concluída. A próxima tarefa deve seguir o próximo cartão autorizado no documento 05, preservando a mesma lógica: mudança pequena, teste, evidência e só então avanço para a etapa seguinte.
