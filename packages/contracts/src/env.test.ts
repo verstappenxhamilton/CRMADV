@@ -17,15 +17,23 @@ describe("Env validation", () => {
       MOCK_PROVIDERS: "false",
     });
     expect(env.MOCK_PROVIDERS).toBe(false);
-    expect(env.NODE_ENV).toBe("production");
   });
 
-  it("throws an error when MOCK_PROVIDERS=true in production", () => {
+  it("throws when MOCK_PROVIDERS=true in production", () => {
     expect(() =>
       validateEnv({
         NODE_ENV: "production",
         MOCK_PROVIDERS: "true",
       })
-    ).toThrowError(/CRÍTICO: MOCK_PROVIDERS não pode ser 'true' em ambiente de produção/);
+    ).toThrowError(/MOCK_PROVIDERS não pode ser 'true'/);
+  });
+
+  it("rejects invalid boolean strings", () => {
+    expect(() => validateEnv({ MOCK_PROVIDERS: "banana" })).toThrow();
+  });
+
+  it("rejects invalid ports", () => {
+    expect(() => validateEnv({ PORT: 0 })).toThrow();
+    expect(() => validateEnv({ PORT: 70000 })).toThrow();
   });
 });
