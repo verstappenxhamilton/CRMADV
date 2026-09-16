@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import React from "react";
+import "@crmadv/ui/tokens.css";
+import "@/lib/env";
 
 export const metadata: Metadata = {
   title: "CRM com Sala Virtual para Escritórios",
@@ -13,7 +15,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body style={{ margin: 0, fontFamily: "system-ui, sans-serif", backgroundColor: "#F8FAFC", color: "#0F172A" }}>
+      <body
+        style={{
+          margin: 0,
+          fontFamily: "system-ui, sans-serif",
+          backgroundColor: "var(--color-bg-base)",
+          color: "var(--color-text-main)",
+        }}
+      >
         {children}
       </body>
     </html>
