@@ -1,14 +1,16 @@
 import { z } from "zod";
 
-const BooleanString = z.union([z.boolean(), z.string()]).transform((val) => {
-  if (typeof val === "boolean") return val;
-  return val.toLowerCase() === "true" || val === "1";
-});
+const BooleanString = z
+  .union([z.boolean(), z.enum(["true", "false", "1", "0"])])
+  .transform((val) => {
+    if (typeof val === "boolean") return val;
+    return val === "true" || val === "1";
+  });
 
 export const EnvSchema = z
   .object({
     NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
-    PORT: z.coerce.number().default(3000),
+    PORT: z.coerce.number().int().positive().max(65535).default(3000),
     MOCK_PROVIDERS: BooleanString.default(false),
   })
   .refine(
