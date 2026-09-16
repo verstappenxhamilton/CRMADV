@@ -1,0 +1,18 @@
+:root {
+  --color-bg-base: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-text-main: #0F172A;
+  --color-text-muted: #475569;
+  --color-primary: #1D4ED8;
+  --color-primary-fg: #FFFFFF;
+  --color-border-decorative: #E2E8F0;
+  --color-border-input: #64748B;
+  --color-error: #B91C1C;
+  --color-success: #166534;
+  --color-warning: #92400E;
+
+  --min-touch-target: 44px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+}
