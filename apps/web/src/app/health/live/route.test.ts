@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { GET } from "./route";
-import { HealthCheckResponseSchema } from "@crmadv/contracts";
+import { APP_VERSION, HealthCheckResponseSchema } from "@crmadv/contracts";
 
 describe("GET /health/live", () => {
   it("returns HTTP 200 with schema-compliant payload", async () => {
@@ -12,7 +12,7 @@ describe("GET /health/live", () => {
     expect(parsed.success).toBe(true);
     if (parsed.success) {
       expect(parsed.data.status).toBe("ok");
-      expect(parsed.data.version).toBe("0.1.0");
+      expect(parsed.data.version).toBe(APP_VERSION);
       expect(parsed.data.uptimeSeconds).toBeGreaterThanOrEqual(0);
     }
   });
